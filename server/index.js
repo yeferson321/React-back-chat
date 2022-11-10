@@ -8,9 +8,9 @@ dotenv.config();
 
 const app = express();
 const server = http.createServer(app);
-const io = new SocketServer(server, { maxHttpBufferSize: 1000e8, cors: { origin: `${process.env.ORIGIN}`, } });
+const io = new SocketServer(server, { maxHttpBufferSize: 1000e8, cors: { origin: "https://gleaming-stroopwafel-b44634.netlify.app", } });
 
-const options = { origin: process.env.ORIGIN, }
+const options = { origin: "https://gleaming-stroopwafel-b44634.netlify.app" }
 app.use(cors(options))
 
 app.use(morgan('dev'));
