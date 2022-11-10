@@ -8,10 +8,14 @@ dotenv.config();
 
 const app = express();
 const server = http.createServer(app);
-const io = new SocketServer(server, { maxHttpBufferSize: 1000e8, cors: { origin: "https://gleaming-stroopwafel-b44634.netlify.app", } });
-
-const options = { origin: "https://gleaming-stroopwafel-b44634.netlify.app" }
-app.use(cors(options))
+const io = new SocketServer(server, {
+    maxHttpBufferSize: 1000e8,
+    cors: {
+      origin: ["https://gleaming-stroopwafel-b44634.netlify.app"],
+      allowedHeaders: ["my-custom-header"],
+      credentials: true
+    }
+});
 
 app.use(morgan('dev'));
 
