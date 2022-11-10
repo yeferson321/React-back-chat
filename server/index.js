@@ -17,7 +17,11 @@ const io = new SocketServer(server, {
     }
 });
 
+const options = { origin: process.env.ORIGIN, }
+app.use(cors(options))
+
 app.use(morgan('dev'));
+
 
 io.on('connection', (socket) => {
 
