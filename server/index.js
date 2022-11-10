@@ -3,7 +3,6 @@ import morgan from "morgan";
 import cors from "cors";
 import { Server as SocketServer } from 'socket.io';
 import http from 'http';
-import hola from './hola.js'
 import dotenv from 'dotenv';
 dotenv.config();
 
@@ -15,8 +14,6 @@ const options = { origin: process.env.ORIGIN, }
 app.use(cors(options))
 
 app.use(morgan('dev'));
-app.use(hola);
-
 
 io.on('connection', (socket) => {
 
