@@ -11,13 +11,13 @@ const server = http.createServer(app);
 const io = new SocketServer(server, {
     maxHttpBufferSize: 1000e8,
     cors: {
-      origin: ["https://react-fron-chat.vercel.app/"],
+      origin: '*',
       allowedHeaders: ["my-custom-header"],
       credentials: true
     }
 });
 
-const options = { origin: "https://react-fron-chat.vercel.app/" }
+const options = { origin: '*',  }
 app.use(cors(options))
 app.use(morgan('dev'));
 
