@@ -17,7 +17,7 @@ const io = new SocketServer(server, {
     }
 });
 
-const options = { origin: process.env.ORIGIN, }
+const options = { origin: "https://gleaming-stroopwafel-b44634.netlify.app", }
 app.use(cors(options))
 
 app.use(morgan('dev'));
